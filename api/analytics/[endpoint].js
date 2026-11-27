@@ -1,7 +1,7 @@
 'use strict';
 const {isIP}=require('node:net');
 const API='https://cryptofork-backend-production.up.railway.app';
-const ORIGIN='https://cryptofork.net/';
+const ORIGIN='https://www.cryptofork.net/';
 module.exports=async function handler(req,res){
  res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
  const endpoint=req.query.endpoint;
