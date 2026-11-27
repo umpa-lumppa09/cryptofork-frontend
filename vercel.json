@@ -1,0 +1,54 @@
+{
+  "functions": {
+    "api/auth/*.js": {
+      "maxDuration": 30
+    },
+    "api/landing.js": {
+      "includeFiles": "lib/pages/*.html"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/landing"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/api/landing"
+    },
+    {
+      "source": "/article.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "token2049-novex"
+        }
+      ],
+      "destination": "/token2049-novex.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/webinar-1.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/webinar-2.html",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/optimized/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
