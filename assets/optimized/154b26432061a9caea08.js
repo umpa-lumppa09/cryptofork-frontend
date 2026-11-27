@@ -1,0 +1,7 @@
+
+/* Shared footer on every page. */
+(()=>{
+ const footer=document.createElement('footer');footer.className='site-footer';footer.innerHTML=`<div class="footer-grid"><nav aria-label="Разделы CryptoFork"><h2>Разделы CryptoFork</h2><a href="news.html">Новости</a><a href="articles.html">Статьи</a><a href="forum.html">Форум</a><a href="account.html">Личный кабинет</a></nav><nav aria-label="Информация"><h2>Информация</h2><a href="terms.html">Пользовательское соглашение</a><a href="privacy.html">Политика конфиденциальности</a><a href="cookies.html">Cookies и приватность</a><a href="consent.html">Обработка персональных данных</a><a href="contacts.html">Контакты и реквизиты</a><button type="button" data-footer-privacy>Настройки приватности</button></nav></div><div class="footer-owner">Анненков Михаил Владимирович · ИНН 434501171692</div><div class="footer-copyright">© 2026 CryptoFork.</div>`;document.body.append(footer);const privacy=document.querySelector('.privacy-settings');if(privacy){footer.querySelector('[data-footer-privacy]').onclick=()=>privacy.click();privacy.classList.add('footer-privacy-source')}else footer.querySelector('[data-footer-privacy]').remove();
+ if(['login','register','forgot-password'].includes((location.pathname.split('/').pop()||'').replace('.html',''))){const panel=document.querySelector('.auth-panel');if(panel){const links=document.createElement('p');links.className='auth-legal-links';links.innerHTML='<a href="terms.html">Условия использования</a> · <a href="privacy.html">Политика конфиденциальности</a>';panel.append(links)}}
+})();
+
