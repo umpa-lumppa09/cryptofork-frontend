@@ -44,7 +44,8 @@ function authPage(register=false,recover=false){
 }
 $('#app').innerHTML=({...legalPages,account:()=>crumb('<strong>Аккаунт</strong>')+'<section id="account-content" class="account-page"><p class="empty">Загружаем профиль…</p></section>',login:()=>authPage(),register:()=>authPage(true),'forgot-password':()=>authPage(false,true),forum,index:forum,topic,news,articles,article:()=>article(false),'article-full':()=>article(true),menu:topic}[page]||forum)();
 if(['news','articles','article','article-full'].includes(page)){
- const promo=document.createElement('div');
+ const promo=document.createElement('a');
+ promo.href='https://novex.us.com';
  promo.className='zero-header';
  promo.setAttribute('aria-label','Реклама NOVEX');
  promo.innerHTML='<img loading="lazy" decoding="async" src="/assets/optimized/6d781c847c972dc9fb98.webp" alt="Запусти ИИ-ноду бесплатно в один клик. Через 12 часов получи 5 долларов.">';
