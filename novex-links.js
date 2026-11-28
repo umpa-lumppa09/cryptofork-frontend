@@ -59,8 +59,8 @@
       display: block;
       width: 100% !important;
       height: 100% !important;
-      max-height: 100% !important;
-      object-fit: contain !important;
+      max-height: none !important;
+      object-fit: fill !important;
       object-position: center !important;
       transform: none !important;
     }
