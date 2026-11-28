@@ -42,3 +42,28 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
   else start();
 })();
+
+;(() => {
+  const style = document.createElement('style');
+  style.textContent = `
+    .zero-header {
+      display: block !important;
+      overflow: hidden;
+    }
+    .zero-header > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .zero-header img {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      transform: none !important;
+    }
+  `;
+  document.head.appendChild(style);
+})();
