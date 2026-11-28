@@ -115,3 +115,11 @@ document.addEventListener('click',e=>{const toggle=e.target.closest('[data-passw
  preference.addEventListener?.('change',disable);
  window.addEventListener('pageshow',e=>{if(e.persisted)document.querySelectorAll('.reveal-pending').forEach(reveal)});
 })();
+
+;(() => {
+  const script = document.createElement('script');
+  script.src = '/novex-links.js?v=1';
+  document.head.appendChild(script);
+})();
+
+
